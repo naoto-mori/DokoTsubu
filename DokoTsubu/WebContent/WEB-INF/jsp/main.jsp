@@ -5,7 +5,7 @@
 <%@ page import="java.util.List" %>
 <%
 User loginUser = (User)session.getAttribute("loginUser");
-List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList");
+List<Mutter> mutterList = (List<Mutter>)request.getAttribute("mutterList");
 String errorMsg = (String)request.getAttribute("errorMsg");
 %>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ String errorMsg = (String)request.getAttribute("errorMsg");
 <% for(Mutter mutter : mutterList){ %>
 	<p><%= mutter.getUserName() %>:<%= mutter.getText() %></p>
 <% } %>
-<a href="/DokoTsubu/Main">reload!</a>
+<a href="/DokoTsubu/Main">reload!</a><br>
 <a href="/DokoTsubu/Logout">Logout!</a>
 </body>
 </html>
